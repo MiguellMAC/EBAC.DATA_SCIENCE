@@ -1,17 +1,36 @@
-# Portfólio · Projetos do Curso de Ciência de Dados (EBAC)
+# 📊 Portfólio de Projetos – Ciência de Dados (EBAC)
 
-Este repositório reúne **projetos independentes** desenvolvidos ao longo do curso de **Ciência de Dados** da **EBAC**.  
-Cada pasta corresponde a um **módulo/atividade**, com seu próprio objetivo, dados e entregáveis. A ideia é mostrar, de forma organizada, a evolução de habilidades como **limpeza e preparação de dados**, **análise exploratória (EDA)**, **visualização** e **raciocínio analítico**.
-
-> **Como navegar:** entre em cada pasta de módulo e abra o notebook (`.ipynb`) correspondente.  
-> **Ferramentas usadas:** Jupyter Notebook, `pandas`, `numpy`, `matplotlib`, `seaborn`, `plotly`, `scipy`, `statsmodels` (varia por projeto).
+[![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white)](https://www.python.org/)  
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](https://jupyter.org/)  
+[![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-yellow?logo=pandas&logoColor=white)](https://pandas.pydata.org/)  
+[![Plotly](https://img.shields.io/badge/Plotly-Interactive%20Viz-brightgreen?logo=plotly)](https://plotly.com/python/)  
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-red?logo=scikit-learn)](https://scikit-learn.org/stable/)
 
 ---
 
-## Estrutura & Organização
+## 👤 Sobre mim
 
-- Os projetos estão organizados por **capítulos/módulos** (ex.: `Atividade_Cap10`, `Atividade_Cap12`, …).  
-- Cada pasta contém o **notebook** do módulo e, quando aplicável, **arquivos de dados** usados na análise.  
+Sou **Miguel Cardoso**, estudante de **Ciência de Dados** na **EBAC** e também em formação em **Engenharia de Software** na FIAP.  
+Este repositório reúne meus projetos didáticos, desenvolvidos durante o curso, como forma de **aprender, praticar e documentar** minha evolução.  
+
+Embora os projetos tenham caráter **educacional**, eles mostram de forma prática minhas habilidades em:  
+- **Python para Data Science**  
+- **EDA (Exploração de Dados)**  
+- **Limpeza e preparação de dados**  
+- **Visualizações estáticas e interativas**  
+- **Modelagem Preditiva** (classificação e regressão)  
+- **Storytelling com dados**
+
+> ⚠️ Os dados e códigos aqui são **apenas para fins didáticos** e não devem ser utilizados em produção.
+
+---
+
+## 📂 Estrutura do Repositório
+
+- Cada pasta segue o formato `Atividade_CapX`, onde **X é o número do capítulo/módulo**.  
+- Dentro de cada pasta há um notebook (`.ipynb`) com análises, gráficos e conclusões.  
+- Os projetos são independentes, mas seguem uma linha de progressão: de fundamentos até Machine Learning.
+- Cada pasta contém o **notebook** do módulo e, quando aplicável, **arquivos de dados** usados na análise.
 - Os projetos são **independentes entre si**, mas refletem a progressão natural do curso (do básico ao avançado).  
   *Ex.: atividades de churn de telecom são evoluídas de um módulo ao seguinte, aprofundando técnicas e interpretações.*
 
@@ -43,6 +62,66 @@ Aprofundamento da análise de **churn** com **quartis** (0–25–50–75–100%
 
 > Observação: os nomes das pastas seguem o padrão de capítulos/atividades do curso (ex.: `Atividade_Cap10`, `Atividade_Cap12`, `Atividade_Cap13`, `Atividade_Cap14`, `Atividade_Cap15`). :contentReference[oaicite:5]{index=5}
 
+## 🔹 Capítulo 17 — **Classificação: Credit Score**
+
+**Objetivo.** Prever a faixa de **Credit Score** (ex.: *Low / Average / High*).
+
+**Principais passos**
+- **Tratamento e padronização**
+  - Conversão de colunas numéricas (p.ex. `Income`) para **float** (ajuste de `.` e `,`).
+  - **Imputação de `Age`** considerando o padrão observado com `Income` (ex.: médias por agrupamento acima/abaixo da média geral).
+  - Padronização de rótulos categóricos (maiúsculas/minúsculas, valores “No internet service”, etc.).
+- **EDA**
+  - Contagens, **crosstabs** entre `Credit Score` e categóricas (ex.: `Education`, `Home Ownership`, etc.).
+  - Histogramas e boxplots para entender distribuição de `Income`/`Age` por faixa de score.
+- **Preparação**
+  - **One-Hot Encoding** para categóricas (ex.: `Education`).
+  - **Target**: `Credit Score` codificado como classe (0/1/2).
+  - **Split** treino/teste com **estratificação** pelo target (mantém as proporções das classes).
+- **Modelagem & Avaliação**
+  - Classificador base (sklearn) para multiclasse.
+  - Métricas: **accuracy** e **matriz de confusão**; análise de erros por classe.
+- **Conclusões**
+  - As variáveis socioeconômicas (ex.: `Income`, `Education`) mostram poder discriminativo; **balanceamento/estratificação** é importante devido à distribuição das classes.
+  - Próximos passos: testar modelos lineares e baseados em árvores, validação cruzada e ajuste de limiar por classe.
+
+---
+
+## 🔹 Capítulo 18 — **Regressão: Previsão de Aluguel**
+
+Notebook: regressão **simples** (apenas `Metragem`) e **múltipla** (variáveis estruturais do imóvel).
+
+**Objetivo.** Prever **`Valor_Aluguel`** a partir das características do imóvel.
+
+**Pré-processamento e EDA**
+- Criação auxiliar de **`preco_m2 = Valor_Aluguel / Metragem`** **somente** para diagnóstico de outliers (não entra no modelo).
+- **Regra transparente de *cap*** (IQR):
+  - Quando **`Valor_Aluguel > 5900`** **e** **`preco_m2 > 63`**, substituir por `Metragem × 63`.  
+  - Registro da **flag** e do **valor original** para auditoria.
+- Tratamento adicional:
+  - `Valor_Condominio`: remoção/trimming por p-quantil (ex.: p99) para reduzir cauda extrema.
+  - **Feature derivada:** `N_Espaco = N_Quartos + N_Banheiros + 2×N_Suites + N_Vagas`.
+- Exploração visual:
+  - **Scatter com trendline** (`Metragem × Valor_Aluguel`) e facetas/cores por `N_Quartos`.
+  - Boxplots/histogramas para entender dispersões e caudas.
+
+**Modelagem**
+- **Regressão Linear Simples** (target vs `Metragem`)
+  - Equação (exemplo observado): **ŷ = −321,92 + 36,23 × Metragem**.
+  - Resultado típico após tratamento: **R² ≈ 0,57** (antes ≈ 0,52).  
+  - Observação: heterocedasticidade (dispersão cresce com metragem) — anotar como limitação.
+- **Regressão Linear Múltipla**
+  - Variáveis candidatas: `Metragem`, `Valor_Condominio`, `N_Quartos`, `N_Banheiros`, `N_Suites`, `N_Vagas`, `N_Espaco`.
+  - Avaliação com **R²**, **MAE** e **RMSE** no **conjunto de teste**.
+  - Comparação com o modelo simples para evidenciar ganho de explicação.
+
+**Principais conclusões**
+- A **metragem** sozinha já explica parte relevante do preço, mas existe grande variação (padrão de construção, vagas, suítes e condomínio pesam bastante).  
+- O **tratamento de outliers** guiado por IQR melhorou a estabilidade do modelo.  
+- Próximos passos naturais: regressão com `log(Valor_Aluguel)`, regularização (Ridge/Lasso) e validação cruzada.
+
+---
+
 ---
 
 ## O que você encontra nos notebooks
@@ -51,6 +130,7 @@ Aprofundamento da análise de **churn** com **quartis** (0–25–50–75–100%
 - **Visualizações objetivas:** gráficos que mostram proporções, distribuições e comparações entre grupos.  
 - **Boas práticas de dados:** checagem de nulos, padronização de rótulos, máscaras condicionais e justificativas para imputação.  
 - **Interpretação focada no negócio:** as leituras conectam os números a *insights* (ex.: segmentos com maior risco de churn).
+- **Modelos de Machine Learning** exemplos seriam Regressão linear e árvore de decisão
 
 ---
 
