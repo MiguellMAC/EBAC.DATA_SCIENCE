@@ -138,6 +138,7 @@ O foco foi interpretar médias, consistência das amostras, p-valor e região cr
 - **Boas práticas de dados:** checagem de nulos, padronização de rótulos, máscaras condicionais e justificativas para imputação.  
 - **Interpretação focada no negócio:** as leituras conectam os números a *insights* (ex.: segmentos com maior risco de churn).
 - **Modelos de Machine Learning** exemplos seriam Regressão linear e árvore de decisão
+- **Estatística aplicada** Utilização de estratégias estátiscas avançadas para validação de hipóteses
 
 ---
 
