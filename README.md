@@ -35,6 +35,9 @@ Embora os projetos tenham caráter **educacional**, eles mostram de forma práti
 - Os projetos são **independentes entre si**, mas refletem a progressão natural do curso (do básico ao avançado).  
   *Ex.: atividades de churn de telecom são evoluídas de um módulo ao seguinte, aprofundando técnicas e interpretações.*
 
+> Observação: os nomes das pastas seguem o padrão de capítulos/atividades do curso (ex.: `Atividade_Cap10`, `Atividade_Cap12`, `Atividade_Cap13`, `Atividade_Cap14`, `Atividade_Cap15`). :contentReference[oaicite:5]{index=5}
+
+
 ---
 
 ## Projetos por Módulo
@@ -60,8 +63,6 @@ Projeto aplicado com dados de **telecom/churn**: verificação de **regras de ne
 ### 🔹 Atividade_Cap15 — Projeto TeleCON, Etapa 2 (Análises univarias e bivariadas, lindando com outliers)
 Aprofundamento da análise de **churn** com **quartis** (0–25–50–75–100%) e **faixas de tempo de cliente**, avaliando taxa de churn por segmentos e **estratificando** por potenciais confundidores (ex.: tipo de contrato).  
 (*`pd.qcut` e `pd.cut`, churn por faixa, gráficos de barras empilhadas 100%, leitura de tendência e possível validação com regressão logística.*) :contentReference[oaicite:4]{index=4}
-
-> Observação: os nomes das pastas seguem o padrão de capítulos/atividades do curso (ex.: `Atividade_Cap10`, `Atividade_Cap12`, `Atividade_Cap13`, `Atividade_Cap14`, `Atividade_Cap15`). :contentReference[oaicite:5]{index=5}
 
 ## 🔹 Capítulo 17 — **Classificação: Credit Score**
 
