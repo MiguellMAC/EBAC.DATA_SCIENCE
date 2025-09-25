@@ -20,6 +20,7 @@ Embora os projetos tenham caráter **educacional**, eles mostram de forma práti
 - **Visualizações estáticas e interativas**  
 - **Modelagem Preditiva** (classificação e regressão)  
 - **Storytelling com dados**
+- **Estatística aplicada**
 
 > ⚠️ Os dados e códigos aqui são **apenas para fins didáticos** e não devem ser utilizados em produção.
 
@@ -119,6 +120,11 @@ Notebook: regressão **simples** (apenas `Metragem`) e **múltipla** (variáveis
 - A **metragem** sozinha já explica parte relevante do preço, mas existe grande variação (padrão de construção, vagas, suítes e condomínio pesam bastante).  
 - O **tratamento de outliers** guiado por IQR melhorou a estabilidade do modelo.  
 - Próximos passos naturais: regressão com `log(Valor_Aluguel)`, regularização (Ridge/Lasso) e validação cruzada.
+
+### 🔹 Atividade_Cap19 — Estatística Aplicada
+Estudo sobre **testes de hipóteses** usando o exemplo de duas estratégias de ensino de matemática.  
+Foram simuladas amostras de notas de alunos, com análise de **médias e variâncias**, definição de hipóteses (H0 e H1) e aplicação de um **teste Z unilateral**.  
+O foco foi interpretar médias, consistência das amostras, p-valor e região crítica em um gráfico da distribuição normal, concluindo sobre a significância estatística entre as duas estratégias.
 
 ---
 
