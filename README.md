@@ -35,7 +35,7 @@ Embora os projetos tenham caráter **educacional**, eles mostram de forma práti
 - Os projetos são **independentes entre si**, mas refletem a progressão natural do curso (do básico ao avançado).  
   *Ex.: atividades de churn de telecom são evoluídas de um módulo ao seguinte, aprofundando técnicas e interpretações.*
 
-> Observação: os nomes das pastas seguem o padrão de capítulos/atividades do curso (ex.: `Atividade_Cap10`, `Atividade_Cap12`, `Atividade_Cap13`, `Atividade_Cap14`, `Atividade_Cap15`). :contentReference[oaicite:5]{index=5}
+> Observação: os nomes das pastas seguem o padrão de capítulos/atividades do curso (ex.: `Atividade_Cap10`, `Atividade_Cap12`, `Atividade_Cap13`, `Atividade_Cap14`, `Atividade_Cap15`).
 
 
 ---
