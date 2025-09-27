@@ -127,6 +127,13 @@ Estudo sobre **testes de hipóteses** usando o exemplo de duas estratégias de e
 Foram simuladas amostras de notas de alunos, com análise de **médias e variâncias**, definição de hipóteses (H0 e H1) e aplicação de um **teste Z unilateral**.  
 O foco foi interpretar médias, consistência das amostras, p-valor e região crítica em um gráfico da distribuição normal, concluindo sobre a significância estatística entre as duas estratégias.
 
+### 🔹 Atividade_Cap20 — Projeto Credit Score com Naive Bayes
+Aplicação do algoritmo de **Naive Bayes** para prever a faixa de **Credit Score** (*High, Average, Low*), dando continuidade ao pré-processamento feito no Cap. 17.  
+O modelo foi treinado e avaliado em bases de treino e teste, trazendo métricas de **acurácia**, **recall macro** e **matriz de confusão**.  
+Na fase de treino, apresentou alto desempenho; já no teste, os resultados caíram um pouco, mas continuaram bons, mostrando capacidade de generalização.  
+O exercício reforçou como o Naive Bayes combina probabilidades das variáveis (assumindo independência) para classificar clientes, além de evidenciar limitações quando as variáveis não são totalmente independentes.
+
+
 ---
 
 ---
@@ -139,6 +146,8 @@ O foco foi interpretar médias, consistência das amostras, p-valor e região cr
 - **Interpretação focada no negócio:** as leituras conectam os números a *insights* (ex.: segmentos com maior risco de churn).
 - **Modelos de Machine Learning** exemplos seriam Regressão linear e árvore de decisão
 - **Estatística aplicada** Utilização de estratégias estátiscas avançadas para validação de hipóteses
+**Verificação da capacidade do modelo** Métodos para verificar coisas como acurácia e recall do modelo visando descobrir sua capacidade de acerto
+
 
 ---
 
