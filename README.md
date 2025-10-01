@@ -133,6 +133,12 @@ O modelo foi treinado e avaliado em bases de treino e teste, trazendo métricas 
 Na fase de treino, apresentou alto desempenho; já no teste, os resultados caíram um pouco, mas continuaram bons, mostrando capacidade de generalização.  
 O exercício reforçou como o Naive Bayes combina probabilidades das variáveis (assumindo independência) para classificar clientes, além de evidenciar limitações quando as variáveis não são totalmente independentes.
 
+### 🔹 Atividade_Cap21 — Projeto Credit Score com Árvore de Decisão
+Aplicação do algoritmo de **Árvore de Decisão** para prever o *Credit Score* (High, Average, Low), em continuação ao pré-processamento do Cap. 17.  
+O modelo completo, usando todas as variáveis, atingiu acurácia perfeita em treino e teste (1.0).  
+Com apenas as duas principais variáveis (Income e Age), obteve acurácia de 0.95 no teste, ainda com desempenho excelente.  
+Na comparação com o **Naive Bayes** (Cap. 20), a Árvore se mostrou mais adequada, já que conseguiu capturar melhor os limiares das variáveis e entregar métricas superiores.
+
 
 ---
 
